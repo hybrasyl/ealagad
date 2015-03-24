@@ -6,7 +6,7 @@ purposes of editing maps, items, etc.
 
 ## Licensing / Copyright
 
-Ealagad is Copyright (C) 2013, Justin Baugh <baughj@audeocloud.com>.
+Ealagad is Copyright (C) 2015, Project Hybrasyl <info@hybrasyl.com>.
 
 Ealagad is free software: you can redistribute it and/or modify it under the
 terms of the GNU Affero General Public License as published by the Free

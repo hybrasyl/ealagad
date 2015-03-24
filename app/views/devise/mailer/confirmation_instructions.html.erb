@@ -1,0 +1,12 @@
+<p>Welcome to Hybrasyl, <%= @nickname %>!</p>
+
+<p>You can confirm your account email (<%= @email %>) through the link below, which will then enable your account
+and allow you to login:</p>
+
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+
+<p>We hope to see you soon!</p>
+
+<p>Yours,</p>
+
+<p>Project Hybrasyl</p>

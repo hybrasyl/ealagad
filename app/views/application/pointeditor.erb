@@ -1,0 +1,6 @@
+  <div><img id="toAnnotate" src="/assets/<%= @worldmap.client_map %>.png"></div>
+  <script>
+    $(window).load(function() {
+      $("#toAnnotate").annotateImage({ editable:true, useAjax: true, worldmapId: <%= @worldmap.id %>});
+    });
+  </script>

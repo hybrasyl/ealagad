@@ -1,0 +1,4 @@
+<%= semantic_form_for [:admin, WorldmapPoint.new] do |p| %>
+  <%= p.input :target_map, :label => "Target Map" %>
+  <%= p.input :target_x, :label => "X"  %> <%= p.input :target_y, :label => "Y" %>
+<% end %>

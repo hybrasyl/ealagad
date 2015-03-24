@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 
+  worldmap: 
+  min_lev: 
+  max_lev: 
+  min_ab: 
+  source_x: 
+  source_y: 
+
+two:
+  id: 
+  worldmap: 
+  min_lev: 
+  max_lev: 
+  min_ab: 
+  source_x: 
+  source_y: 

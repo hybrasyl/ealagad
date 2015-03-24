@@ -1,0 +1,137 @@
+<%= semantic_form_for [:admin, @map] do |f| %>
+<%= f.inputs "Map Info" do %>
+  <%= f.input :id, :label => "Map ID", :hint => "The ID of the map (if blank, will be auto-assigned)" %>
+  <%= f.input :name, :label => "Map Name", :hint => "The name of the map" %>
+  <%= f.input :size_x, :label => "Width", :hint => "The width of the map (X)" %>
+  <%= f.input :size_y, :label => "Height", :hint => "The height of the map (Y)" %>
+  <%= f.input :music, :label => "Music", :hint => "The map's music." %>
+  <%= f.input :flags, :label => "Map Flags", :hint => "Various flags can be set on the map. Dark is actually a combination of Snow and Rain, because why not?",
+  :collection => Hybrasyl::Constants::MapFlags::HASH, :as => :select, :input_html => { :multiple => true } %>
+<% end %>
+
+<%= f.inputs "Tags" do %>
+<p class="forminstructions">
+You can "tag" the map with tags here, allowing for easier searching on the index pages.
+</p>
+  <%= f.input :tag_list %>
+  <script type="text/javascript">
+    $(document).ready(
+      function() {
+        $("#map_tag_list").tokenInput("/admin/maps/tags", { theme: "facebook", 
+      prePopulate:  <%= @map.tags.map { |m| m.name }.map {|n| { "id" => n, "name" => n } }.to_json.html_safe %> });
+    });
+  </script>
+<% end %>
+
+<%= f.inputs "Warps" do %>
+  <p class="forminstructions">
+    Here, warps (links to other maps) can be updated. Warps can either be defined as singular points on a map, e.g. <strong>1,3 to Mileth Alchemist 5,4</strong> or as ranges (this is incredibly useful
+    for large zone exits) such as <strong>93,11-14 Temple Of Choosing 10,5</strong>, (which would result in warps being placed at 93,11 , 93,12 , 93,13 and so on).
+  </p>
+
+<table id="map_warps">
+  <tr>
+    <th>Source Range X</th>
+    <th>Source Range Y</th>
+    <th>Target</th>
+    <th>Target X</th>
+    <th>Target Y</th>
+    <th>Min Level</th>
+    <th>Max Level</th>
+    <th>Min AB</th>
+    <th>Monster Usage</th>
+  </tr>
+  <%= f.semantic_fields_for :warps do |w| %>
+  <tr>
+    <td><%= w.input :source_x, :label => false %></td>
+    <td><%= w.input :source_y, :label => false %></td>
+    <td><%= w.input :target, :label => false %></td>
+    <td><%= w.input :target_x, :label => false %></td>
+    <td><%= w.input :target_y, :label => false %></td>
+    <td><%= w.input :min_lev, :label => false %></td>
+    <td><%= w.input :max_lev, :label => false %></td>
+    <td><%= w.input :min_ab, :label => false %></td>
+    <td><%= w.input :mob_use, :label => "" %></td>
+    <td><%= link_to "Remove", "#", :onClick => "if (confirm('Are you sure you want to delete this?\\nIt will be permanently deleted!')) { $.ajax({url: '/warp/#{w.object.id}', type: 'DELETE'}); $(this).closest('tr').remove(); return false; }", :class => "button" %></td>
+  </tr>
+  <% end %>
+
+  <% js = f.semantic_fields_for :warps, Warp.new do |wc| %>
+  <tr>
+    <td><%= wc.input :source_x, :label => false %></td>
+    <td><%= wc.input :source_y, :label => false %></td>
+    <td><%= wc.input :target, :label => false %></td>
+    <td><%= wc.input :target_x, :label => false %></td>
+    <td><%= wc.input :target_y, :label => false %></td>
+    <td><%= wc.input :min_lev, :label => false %></td>
+    <td><%= wc.input :max_lev, :label => false %></td>
+    <td><%= wc.input :min_ab, :label => false %></td>
+    <td><%= wc.input :mob_use, :label => false %></td>
+    <td><%= link_to "Remove", "#", :onClick => "$(this).closest('tr').remove(); return false;", :class => "button" %></td>
+  <% end %>
+</table>
+
+<span class="add-child">
+<script>
+var newForm = "<%= escape_javascript(js) %>";
+</script>
+  <%= link_to "Add New Warp",
+     "#", onClick: "$('#map_warps tr').last().after(newForm.replace(/[0-9]+(?=[\\\]_])/g, new Date().getTime())); return false;",
+      class: "button" %>
+</span>
+<% end %>
+
+<%= f.inputs "World Warps" do %>
+  <p class="forminstructions">
+    You can set up and define world warps here. World warps are simply warps that trigger a transition to a world map on the client side. You can also use ranges here, as well.
+  </p>
+  <table id="map_worldwarps">
+    <tr>
+      <th>Source Range X</th>
+      <th>Source Range Y</th>
+      <th>Target Worldmap</th>
+      <th>Min Level</th>
+      <th>Max Level</th>
+      <th>Min AB</th>
+    </tr>
+    <%= f.semantic_fields_for :worldwarps do |ww| %>
+    <tr>
+      <td><%= ww.input :source_x, :label => false %></td>
+      <td><%= ww.input :source_y, :label => false %></td>
+      <td><%= ww.input :target_worldmap, :label => false %></td>
+      <td><%= ww.input :min_lev, :label => false %></td>
+      <td><%= ww.input :max_lev, :label => false %></td>
+      <td><%= ww.input :min_ab, :label => false %></td>
+      <td><%= link_to "Remove", "#", :onClick => "if (confirm('Are you sure you want to delete this?\\nIt will be permanently deleted!')) { $.ajax({url: '/worldwarp/#{ww.object.id}', type: 'DELETE'}); $(this).closest('tr').remove(); return false; }", :class => "button" %></td>
+    </tr>
+    <% end %>
+    <% wwjs = f.semantic_fields_for :worldwarps, Worldwarp.new do |wwc| %>
+    <tr>
+      <td><%= wwc.input :source_x, :label => false %></td>
+      <td><%= wwc.input :source_y, :label => false %></td>
+      <td><%= wwc.input :target_worldmap, :label => false %></td>
+      <td><%= wwc.input :min_lev, :label => false %></td>
+      <td><%= wwc.input :max_lev, :label => false %></td>
+      <td><%= wwc.input :min_ab, :label => false %></td>
+      <td><%= link_to "Remove", "#", :onClick => "$(this).closest('tr').remove(); return false;", :class => "button" %></td>
+      <% end %>
+  </table>
+<span class="add-child">
+<script>
+var newWWForm = "<%= escape_javascript(wwjs) %>";
+</script>
+  <%= link_to "Add New Worldwarp",
+     "#", onClick: "$('#map_worldwarps tr').last().after(newWWForm.replace(/[0-9]+(?=[\\\]_])/g, new Date().getTime())); return false;",
+      class: "button" %>
+</span>
+
+<% end %>
+
+
+<%= f.actions do %>
+  <%= f.action :submit %>
+    <li class="cancel"><%= link_to "Cancel", [:admin, @map ] %></li>
+  <% end %>
+<% end %>
+
+

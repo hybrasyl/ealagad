@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 
+  name: MyString
+  map: 
+  map_x: 
+  map_y: 
+  target_x: 
+  target_y: 
+  min_lev: 
+  max_lev: 
+  min_ab: 
+
+two:
+  id: 
+  name: MyString
+  map: 
+  map_x: 
+  map_y: 
+  target_x: 
+  target_y: 
+  min_lev: 
+  max_lev: 
+  min_ab: 

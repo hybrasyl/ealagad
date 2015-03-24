@@ -1,0 +1,15 @@
+<p>Hello <%= @resource.nickname %>!</p>
+
+<p>Your account has been locked due to an excessive number of unsuccessful sign in attempts. Womp womp!</p>
+
+<p>Click the link below to unlock your account:</p>
+
+<p><%= link_to 'Unlock my account', unlock_url(@resource, :unlock_token => @resource.unlock_token) %></p>
+
+<p>If this continues to happen, or you did not try to login an excessive number of times, please contact us (admin@hybrasyl.com) immediately.</p>
+
+<p>Yours,</p>
+
+<p>Project Hybrasyl</p>
+
+

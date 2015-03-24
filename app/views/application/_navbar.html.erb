@@ -1,0 +1,29 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <li class="pull-left"> <a class="brand pull-left" href="/">Project Hybrasyl</a></li>
+      <ul class="nav pull-left">
+        <li class="<%= request.fullpath == "/" ? "active" : "" %>"><a href="/">Project News</a></li>
+        <li class="<%= request.fullpath == "/about" ? "active" : "" %>"><a href="/about">About</a></li>
+        <li class="<%= request.fullpath == "/contact" ? "active" : "" %>"><a href="/contact">Contact Us</a></li>
+      </ul>
+
+      <ul class="nav pull-right">
+      <% if account_signed_in? %>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_account.email %><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="/account/manager">Account Manager</a></li>
+          <li><%= link_to "Logout", "/accounts/sign_out", :method => :delete %></li>
+          <% if current_account.can_access_admin? %>
+          <li><a href="/admin">Admin Portal</a></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <li><a href="/accounts/sign_in" class="<%= request.fullpath == "/accounts/sign_in" ? "active" : "" %>">Login</a></li>
+        <li><a href="/accounts/sign_up" class="<%= request.fullpath == "/accounts/sign_up" ? "active" : "" %>">Create Account</a></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

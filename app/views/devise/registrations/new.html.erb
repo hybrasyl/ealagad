@@ -1,0 +1,16 @@
+<div class="container">
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <fieldset>
+    <legend>Create a new Hybrasyl account</legend>
+    <%= f.label :email %> <%= f.email_field :email, :autofocus => true %>
+    <%= f.label :Nickname %> <%= f.text_field :nickname %>
+    <%= f.label :password %> <%= f.password_field :password %>
+    <%= f.label :password_confirmation %> <%= f.password_field :password_confirmation %>
+    <div class="controls">
+      <%= f.submit "Sign up", :class => "btn btn-primary" %>
+    </div>
+  </fieldset>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

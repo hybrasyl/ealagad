@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="text-center pageheader">Project Hybrasyl: Temuair Reborn</h1>
+
+  <p class="lead">
+  Welcome to Project Hybrasyl! Our aim is to create a well-documented and
+  exceptionally accurate private server
+  for <a href="http://www.darkages.com">Dark Ages</a>. Look around, make an
+  account, and join us sometime.
+  </p>
+
+  <h2 class="newsheader text-center">Current News</h2>
+  <% @newsposts.each do |np| %>
+  <div class="well well-vsmall">
+		<h4><%= np.title %></h4>
+	</div>
+  <p class="text-right text-info">
+  <em>posted by <%= np.account.nickname %> on <%= np.post_date.to_date %></em>
+  </p>
+  <div>
+    <%= np.post.html_safe %>
+  </div>
+  <% end %>
+
+</div>
+

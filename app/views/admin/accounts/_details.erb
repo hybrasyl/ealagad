@@ -1,0 +1,21 @@
+<%= semantic_form_for [:admin, @account] do |f| %>
+  <%= f.inputs "Admin Details" do %>
+    <%= f.input :email %>
+    <%= f.input :nickname %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+<li class="check_boxes input optional" id="account_roles_input">
+  <fieldset class="choices">
+    <legend class="label"><label>Roles</label></legend>
+    <input id="account_roles_mask_none" name="account[roles_mask][]" type="hidden" value="" />
+    <ol class="choices-group">
+    <li class="choice">
+    <% Account::ROLES.each { |r| %>
+      <input style="margin-left: 5px;" id="account_roles_mask_true" name="account[roles][<%= r %>]" type="checkbox" <%= ['', 'checked'][@account.is?(r) ? 1 : 0] %> /><%= r %>
+    <% } %>
+    </li>
+    </ol>
+</fieldset>
+  <% end %>
+ <%= f.actions %>
+<% end %>

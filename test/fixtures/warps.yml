@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 
+  x: 
+  y: 
+  destination_x: 
+  destination_y: 
+  max_lev: 
+  min_lev: 
+  min_ab: 
+  mob_use: 
+
+two:
+  id: 
+  x: 
+  y: 
+  destination_x: 
+  destination_y: 
+  max_lev: 
+  min_lev: 
+  min_ab: 
+  mob_use: 

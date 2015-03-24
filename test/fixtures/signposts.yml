@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  map: 
+  map_x: 1
+  map_y: 1
+  message: MyText
+  is_blueboard: false
+  forum: 
+
+two:
+  map: 
+  map_x: 1
+  map_y: 1
+  message: MyText
+  is_blueboard: false
+  forum: 

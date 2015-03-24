@@ -1,0 +1,113 @@
+
+<%= semantic_form_for [:admin, @item_variant] do |i| %>
+<%= i.semantic_errors %>
+<div style="width: 75%">
+	<%= i.inputs "Basic Info" do %>
+  <div style="padding: 20px 0px 0px 10px;">
+		<h3>Item Variants</h3>
+		<p>Item variants are a quick and easy way to create different items from a
+			base. For instance, instead of creating Magic Lorum, Blessed Lorum, etc, we
+			can simply create three variants, associate them as "Enchantable", and then
+			make sure the Lorum has "enchantable variants" enabled. Hybrasyl will then
+			create the individual items, named appropriately. Variants can express
+			variations in value as either +/- percentages, or actual values which will be
+			added or subtracted to the base item.
+    </p>
+  </div>
+	
+ 	<%= i.input :name, :hint => "The name of the variant." %>
+  <%= i.input :modifier, :hint => "The modifier that this variant will create, e.g. 'Magic', 'Blessed', 'Kedian's' etc" %>
+	<%= i.input :element, :as => :select, :collection => Hybrasyl::Constants::Elements::HASH, :include_blank => false, :hint => "The element of this variant." %>
+  <%= i.input :bodystyle, :as => :select, :collection => Hybrasyl::Constants::BodyColors::HASH, :include_blank => false, :hint => "The base color for this variant (e.g. pants, or other background elements)" %>
+
+<div style="padding: 20px 0px 0px 10px; ">
+<h3>Variant Flags</h3>
+<%= i.input :enchantable %>
+<%= i.input :depositable %>
+<%= i.input :bound %>
+<%= i.input :vendorable %>
+<%= i.input :tailorable %>
+<%= i.input :smithable %>
+<%= i.input :consecratable %>
+<%= i.input :perishable %>
+<%= i.input :exchangeable %>
+</div>
+
+<div style="padding: 20px 0px 0px 10px; ">
+<h3>Type of Variant</h3>
+<%= i.input :consecratable_variant, :label => "Consecratable (religious) variant" %>
+<%= i.input :tailorable_variant, :label => "Tailorable variant" %>
+<%= i.input :smithable_variant, :label => "Smithable variant" %>
+<%= i.input :enchantable_variant, :label => "Enchantable (magic) variant" %>
+<%= i.input :elemental_variant, :label => "Elemental variant" %>
+</div>
+
+<div style="padding: 20px 0px 0px 10px; ">
+<h3>Variant Characteristics</h3>
+
+<table id="itemcharacteristics">
+		<tr>
+			<th>Level</th>
+			<th>AB</th>
+			<th>Weight</th>
+			<th>Color</th>
+			<th>Maximum Stack</th>
+			<th>Max Durability</th>
+			<th>Value</th>
+		</tr>
+		<tr>
+			<td><%= i.input :level, :label => false %></td>
+			<td><%= i.input :ab, :label => false %></td>
+			<td><%= i.input :weight, :label => false %></td>
+			<td><%= i.input :color, :label => false %></td>
+			<td><%= i.input :max_stack, :label => false %></td>
+			<td><%= i.input :max_durability, :label => false %></td>
+			<td><%= i.input :value, :label => false %></td>
+		</tr>
+	</table>
+</div>
+</div>
+<% end %>
+
+<%= i.inputs "Variant Stats" do %>
+<table id="itemstats">
+<tr>
+  <th>Str</th>
+  <th>Int</th>
+  <th>Wis</th>
+  <th>Dex</th>
+  <th>Con</th>
+  <th>Hit</th>
+  <th>AC</th>
+  <th>Damage</th>
+  <th>Magic Resist</th>
+  <th>Regen</th>
+  <th>Min S</th>
+  <th>Max S</th>
+  <th>Min L</th>
+  <th>Max L</th>
+	<th>HP Change</th>
+	<th>MP Change</th>
+</tr>
+<tr>
+  <td><%= i.input :str, :label => false %></td>
+  <td><%= i.input :int, :label => false %></td>
+  <td><%= i.input :wis, :label => false %></td>
+  <td><%= i.input :dex, :label => false %></td>
+  <td><%= i.input :con, :label => false %></td>
+  <td><%= i.input :hit, :label => false %></td>
+  <td><%= i.input :ac, :label => false %></td>
+  <td><%= i.input :dmg, :label => false %></td>
+  <td><%= i.input :mr, :label => false %></td>
+	<td><%= i.input :regen, :label => false %></td>
+  <td><%= i.input :min_s_dmg, :label => false %></td>
+  <td><%= i.input :max_s_dmg, :label => false %></td>
+  <td><%= i.input :min_l_dmg, :label => false %></td>
+  <td><%= i.input :max_l_dmg, :label => false %></td>
+  <td><%= i.input :hp, :label => false %></td>
+  <td><%= i.input :mp, :label => false %></td>
+</tr>
+</table>
+<% end %>
+<%= i.actions %>
+<% end %>

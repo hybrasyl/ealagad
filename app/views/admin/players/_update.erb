@@ -1,0 +1,32 @@
+<%= semantic_form_for [:admin, @player] do |p| %>
+<%= p.semantic_errors %>
+  <div style="width: 75%">
+  <%= p.inputs "Account & Login Details" do %>
+    <%= p.input :account %>
+    <%= p.input :password %>
+    <li class="optional stringish"><label class="label">Last Login</label><%= @player.last_login %>
+    <li class="optional stringish"><label class="label">Created</label><%= @player.created_at %>
+  <% end %>
+  <%= p.inputs "Location" do %>
+    <%= p.input :map %> 
+    <%= p.input :map_x, :label => 'X', :input_html => { :style => 'width: 15%' } %>
+    <%= p.input :map_y, :label => 'Y', :input_html => { :style => 'width: 15%' } %>
+  <% end %>
+  <%= p.inputs "Stats" do %>
+    <%= p.input :str, :wrapper_html => { :class => 'float' }, :input_html => { :style => 'width: 15%' } %>
+    <%= p.input :int, :wrapper_html => { :class => 'float' }, :input_html => { :style => 'width: 15%' } %>
+    <%= p.input :wis, :wrapper_html => { :class => 'float' }, :input_html => { :style => 'width: 15%' } %>
+    <%= p.input :con, :wrapper_html => { :class => 'float' }, :input_html => { :style => 'width: 15%' } %>
+    <%= p.input :dex, :wrapper_html => { :class => 'float' }, :input_html => { :style => 'width: 15%' } %>
+  <% end %>
+  <%= p.inputs "Experience" do %>
+    <%= p.input :level, :wrapper_html => { :class => 'float' }, :input_html => { :style => 'width: 35%' } %>
+    <%= p.input :ab, :wrapper_html => { :class => 'float' }, :input_html => { :style => 'width: 35%' } %>
+    <%= p.input :exp, :wrapper_html => { :class => 'float' }, :input_html => { :style => 'width: 35%' } %>
+  <% end %>
+  
+  <%= p.inputs "Player Flags" do %>
+    <%= p.input :flags, :as => :check_boxes %>
+  <% end %>
+<%= p.actions %>
+<% end %>

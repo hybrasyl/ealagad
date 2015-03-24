@@ -1,0 +1,12 @@
+<html lang="en">
+  <head>
+    <title>Map Editor - <%= @worldmap.name %></title>
+    <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag "hybrasyl/worldmapeditor" %>
+    <%= javascript_include_tag "jquery-old.js" %>
+    <%= javascript_include_tag "jquery-ui-1.8.17.js" %>
+    <%= javascript_include_tag "jquery.annotate.js" %>
+  <body class="admin_worldmaps"> 
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 
+  name: MyString
+  sprite: 
+  equip_sprite: 
+  type: 
+  weapon_type: 
+  equip_slot: 
+  weight: 
+  max_stack: 
+  max_durability: 
+  level: 
+  ab: 
+  class: 
+  sex: 
+  hp: 
+  mp: 
+  str: 
+  int: 
+  wis: 
+  con: 
+  dex: 
+  hit: 
+  dmg: 
+  ac: 
+  mr: 
+  element: 
+  max_dmg: 
+  min_dmg: 
+
+two:
+  id: 
+  name: MyString
+  sprite: 
+  equip_sprite: 
+  type: 
+  weapon_type: 
+  equip_slot: 
+  weight: 
+  max_stack: 
+  max_durability: 
+  level: 
+  ab: 
+  class: 
+  sex: 
+  hp: 
+  mp: 
+  str: 
+  int: 
+  wis: 
+  con: 
+  dex: 
+  hit: 
+  dmg: 
+  ac: 
+  mr: 
+  element: 
+  max_dmg: 
+  min_dmg: 

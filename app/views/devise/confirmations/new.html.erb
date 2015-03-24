@@ -1,0 +1,14 @@
+<div class="container">
+  <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+  <fieldset>
+    <legend>Resend confirmation instructions</legend>
+    <%= f.label :email %> <%= f.email_field :email, :autofocus => true %>
+    <span class="help-block">This will resend the confirmation email to activate your Hybrasyl account.</span>
+    <div class="controls">
+      <%= f.submit "Resend confirmation", :class => "btn btn-primary" %>
+    </div>
+  </fieldset>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

@@ -1,0 +1,115 @@
+
+<%= semantic_form_for [:admin, @item] do |i| %>
+<%= i.semantic_errors %>
+<div style="width: 75%">
+	<%= i.inputs "Basic Info" do %>
+	<%= i.input :name, :hint => "The name of the item, displayed to the player." %>
+	<%= i.input :sprite, :hint => "Sprite used to represent this item when it is in an inventory slot." %>
+	<%= i.input :equip_sprite, :hint => "Sprite used for the paperdoll. If -1, the item will appear the same as it does in an inventory slot." %>
+	<%= i.input :display_sprite, :hint => "Sprite used when equipped (e.g. the avatar sprite). 0, here, means an item is invisible." %>
+	<%= i.input :sex, :as => :select, :collection => Hybrasyl::Constants::Genders::HASH, :include_blank => false, :hint => "Gender restriction for the item"  %>
+	<%= i.input :class_type, :as => :select, :collection => Hybrasyl::Constants::Classes::HASH, :include_blank => false, :hint => "Class restriction (e.g. Rogue only)"  %>
+	<%= i.input :item_type, :as => :select, :collection => Hybrasyl::Constants::ItemTypes::HASH, :include_blank => false, :hint => "Item type. Usable, unusable (has an effect), or equippable."  %>
+	<%= i.input :weapon_type, :as => :select, :collection => Hybrasyl::Constants::WeaponTypes::HASH, :hint => "If this item is a weapon, its weapon type."  %>
+	<%= i.input :equip_slot, :as => :select, :collection => Hybrasyl::Constants::EquipmentSlots::HASH, :hint => "If this item is equippable, this is the slot it will occupy."  %>
+	<%= i.input :element, :as => :select, :collection => Hybrasyl::Constants::Elements::HASH, :include_blank => false, :hint => "The element of the item." %>
+  <%= i.input :bodystyle, :as => :select, :collection => Hybrasyl::Constants::BodyColors::HASH, :include_blank => false, :hint => "The base color for the item (e.g. pants, or other background elements)" %>
+
+<div style="padding: 20px 0px 0px 10px; ">
+<h3>Item Flags</h3>
+
+<%= i.input :enchantable %>
+<%= i.input :depositable %>
+<%= i.input :bound %>
+<%= i.input :vendorable %>
+<%= i.input :tailorable %>
+<%= i.input :smithable %>
+<%= i.input :consecratable %>
+<%= i.input :perishable %>
+<%= i.input :exchangeable %>
+<%= i.input :unique_equipped, :label => "Unique-equipped" %>
+<%= i.input :unique %>
+<%= i.input :consumed_on_use, :label => "Consumed on use" %>
+<%= i.input :master_only, :label => "Master only" %><br/>
+<%= i.input :teleport_destination, :label => "Teleport destination",
+    :as => :select, :collection => Map.all(:order => 'name').map{|m| ["#{m.name}", m.id]} %>
+</div>
+
+<div style="padding: 20px 0px 0px 10px; ">
+<h3>Item Variants</h3>
+<%= i.input :has_consecratable_variants, :label => "Automatically create consecratable (religious) variants" %>
+<%= i.input :has_tailorable_variants, :label => "Automatically create tailorable variants" %>
+<%= i.input :has_smithable_variants, :label => "Automatically create smithable variants" %>
+<%= i.input :has_enchantable_variants, :label => "Automatically create enchantable variants" %>
+<%= i.input :has_elemental_variants, :label => "Automatically create elemental variants" %>
+</div>
+
+<div style="padding: 20px 0px 0px 10px; ">
+<h3>Item Characteristics</h3>
+
+<table id="itemcharacteristics">
+		<tr>
+			<th>Level</th>
+			<th>AB</th>
+			<th>Weight</th>
+			<th>Color</th>
+			<th>Maximum Stack</th>
+			<th>Max Durability</th>
+			<th>Value</th>
+		</tr>
+		<tr>
+			<td><%= i.input :level, :label => false %></td>
+			<td><%= i.input :ab, :label => false %></td>
+			<td><%= i.input :weight, :label => false %></td>
+			<td><%= i.input :color, :label => false %></td>
+			<td><%= i.input :max_stack, :label => false %></td>
+			<td><%= i.input :max_durability, :label => false %></td>
+			<td><%= i.input :value, :label => false %></td>
+		</tr>
+	</table>
+</div>
+</div>
+<% end %>
+
+<%= i.inputs "Stats" do %>
+<table id="itemstats">
+<tr>
+  <th>Str</th>
+  <th>Int</th>
+  <th>Wis</th>
+  <th>Dex</th>
+  <th>Con</th>
+  <th>Hit</th>
+  <th>AC</th>
+  <th>Damage</th>
+  <th>Magic Resist</th>
+  <th>Regen</th>
+  <th>Min S</th>
+  <th>Max S</th>
+  <th>Min L</th>
+  <th>Max L</th>
+	<th>HP Change</th>
+	<th>MP Change</th>
+</tr>
+<tr>
+  <td><%= i.input :str, :label => false %></td>
+  <td><%= i.input :int, :label => false %></td>
+  <td><%= i.input :wis, :label => false %></td>
+  <td><%= i.input :dex, :label => false %></td>
+  <td><%= i.input :con, :label => false %></td>
+  <td><%= i.input :hit, :label => false %></td>
+  <td><%= i.input :ac, :label => false %></td>
+  <td><%= i.input :dmg, :label => false %></td>
+  <td><%= i.input :mr, :label => false %></td>
+	<td><%= i.input :regen, :label => false %></td>
+  <td><%= i.input :min_s_dmg, :label => false %></td>
+  <td><%= i.input :max_s_dmg, :label => false %></td>
+  <td><%= i.input :min_l_dmg, :label => false %></td>
+  <td><%= i.input :max_l_dmg, :label => false %></td>
+  <td><%= i.input :hp, :label => false %></td>
+  <td><%= i.input :mp, :label => false %></td>
+</tr>
+</table>
+<% end %>
+<%= i.actions %>
+<% end %>

@@ -1,0 +1,5 @@
+load 'deploy'
+load 'deploy/assets'
+load 'config/deploy'
+require 'bundler/capistrano'
+require 'capistrano/ext/multistage'

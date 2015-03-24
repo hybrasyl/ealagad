@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 
+  account: 
+  name: MyString
+  password: MyString
+  sex: false
+  hairstyle: 
+  haircolor: 
+  map: 
+  map_x: 
+  map_y: 
+  direction: 
+  class: 
+  level: 
+  exp: 
+  ab: 
+  ab_exp: 
+  max_hp: 
+  max_mp: 
+  cur_hp: 
+  cur_mp: 
+  str: 
+  int: 
+  wis: 
+  con: 
+  dex: 
+
+two:
+  id: 
+  account: 
+  name: MyString
+  password: MyString
+  sex: false
+  hairstyle: 
+  haircolor: 
+  map: 
+  map_x: 
+  map_y: 
+  direction: 
+  class: 
+  level: 
+  exp: 
+  ab: 
+  ab_exp: 
+  max_hp: 
+  max_mp: 
+  cur_hp: 
+  cur_mp: 
+  str: 
+  int: 
+  wis: 
+  con: 
+  dex: 

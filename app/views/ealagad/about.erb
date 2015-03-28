@@ -8,18 +8,18 @@
 		decided to bring the Korean MMORPG <em>Legends of Darkness</em> to the US
 		market. The first director, <a href="http://finegamedesign.com/">David Ethan
 		Kennerly</a>, created a rich and vibrant world drawing from a variety of
-		influences, from Lovecraft to Celtic mythology. 
+		influences, from Lovecraft to Celtic mythology.
 	</p>
 	<p>
-		<em>Dark Ages</em>, uniquely, had functioning, player-driven political, religious,
-		and social systems, all of which had real and tangible impacts on the
-		greater world, allowing for an unprecedented empowerment of its
+		<em>Dark Ages</em>, uniquely, had functioning, player-driven political,
+		religious, and social systems, all of which had real and tangible impacts
+		on the greater world, allowing for an unprecedented empowerment of its
 		inhabitants. Many players (or, in the language of
 		Temuair, <em>Aislings</em>) who played Dark Ages during its heyday widely
 		consider it to be one of the finest MMORPGs ever produced, in spite of its
 		(obvious) age.
 	</p>
-	
+
 	<h3>What is Project Hybrasyl?</h3>
 	<p>
 		Project Hybrasyl is an effort to create a viable private server for Dark
@@ -29,7 +29,6 @@
 		architectures, designed and implemented in collaboration between Nexon and
 		IBM Korea in the late 1990s.
 	</p>
-		
   <p>
 		Project Hybrasyl currently consists of Heiler, Kedian, and Acht. Heiler and
 		Kedian are the nominal directors of the project, making decisions on
@@ -37,55 +36,69 @@
 		content direction and community outreach, and the reimplementation of old
 		Temuair. Kedian and Acht are collectively responsible for the actual
 		implementation of Hybrasyl from a technology standpoint.
-		
+
 		Along the way we have had quite a bit of help, input, and support
 		from <a href="/about/credits">these fine Aislings</a>.
 	</p>
-	
-	<p>The project, from a technology point of view, consists of three major
+
+  <h3>How can I contribute?</h3>
+
+  <p> Hybrasyl is <a href="https://www.gnu.org/philosophy/free-sw.html"free
+  software</a>. You are free to download and run it, modify and update it, and
+  contribute back! If you run a Hybrasyl server, in fact, you are required to
+  provide your source code to your users. We suggest you start
+  by <a href="https://github.com/hybrasyl/server#fork-destination-box">forking
+  us on Github</a>, and submitting a pull request! </p> <p> You can also join
+  our Google Groups lists to discuss Hybrasyl, or what you wish to work
+  on: <a href="https://groups.google.com/forum/#!forum/hybrasyl-users">Hybrasyl
+  Users</a> for general discussion and help on using Hybrasyl components, and
+  <a href="https://groups.google.com/forum/#!forum/hybrasyl-devel">Hybrasyl
+  Developers</a> for development / technical issues.
+
+	<p>The project, from a technology point of view, consists of four major
 	components:</p>
-	
+
 	<h4>Hybrasyl Server</h4> 
 	
-	<p>This is a C# (.NET) server, written by Acht and Kedian. The project was
-		started by Acht in C#; when Kedian joined the project, he simply made a few
-		commits here and there. Acht, who is active on a number of projects, didn't
-		really have the time to contribute actively, and so Kedian took over
-		stewardship of the project. Acht still contributes from time to time in
-		very important ways (most recently with metafile support and bug fixing).
-		Kedian has implemented many new features and refactored Hybrasyl to
-		support, among other things, quadtree storage of in-game entities, usage of
-		Microsoft's Entity Framework for Hybrasyl's data access, full item support, 
-		and more. </p>
+	<p>The server itself. The project was started by Acht in C#; when Kedian
+		joined the project, he simply made a few commits here and there. Acht, who
+		is active on a number of projects, didn't really have the time to
+		contribute actively, and so Kedian took over stewardship of the project.
+		Acht still contributes from time to time in very important ways (most
+		recently with metafile support and bug fixing). Kedian has implemented many
+		new features and refactored Hybrasyl to support, among other things,
+		quadtree storage of in-game entities, usage of Microsoft's Entity Framework
+		for Hybrasyl's data access, full item support, and more. </p>
 	
 	<h4>Ealagad</h4>
 	
-	<p>
-		Ealagad (Aisling historians may remember her as Temuair's fourth Empress),
-	 	written and maintained by Kedian, is a Ruby on Rails application that
-	 	powers this website and drives the Hybrasyl administrative interface, which
-	 	allows editing of maps, items, worldmaps and more via a
-	 	custom <a href="http://www.activeadmin.info">ActiveAdmin</a> interface.
-	 	Ealagad is also the canonical data store and schema source for Hybrasyl's
-	 	data model.
-	</p>
+	<p> Ealagad (Aisling historians may remember her as Temuair's fourth
+      Empress), is a Ruby on Rails application that powers this website and
+      drives the Hybrasyl administrative interface, which allows editing of
+      maps, items, worldmaps and more via a
+      custom <a href="http://www.activeadmin.info">ActiveAdmin</a> interface.
+      Ealagad is also the canonical data store and schema source for Hybrasyl's
+      data model. </p>
+
+  <h4>Hybrasyl Editor</h4>
+  <p>
+    The Hybrasyl World Editor is a work in progress, and will allow users to
+    edit their worlds from the comfort of an easy to use GUI tool.
+   </p>
 	
 	<h4>Hybrasyl Launcher</h4>
 	
-	<p>
-		The Hybrasyl Launcher, written by Acht, is a simple .NET application that
-		makes it possible to connect to Hybrasyl. Kedian extended this application
-		to support connecting to different servers (production, staging, or
-		localhost, for developers) and made other simple modifications.
-	</p>
-	
+	<p> The Hybrasyl Launcher is a simple .NET application that makes it possible
+		to connect to Hybrasyl. It supports connecting to different servers
+		(production, staging, or localhost, for developers).</p>
+
 	<h4>Other Tools</h4>
 	<p>
-		We use <a href="http://www.github.com">GitHub</a> to house our code and
-		Atlassian's <a href="http://www.atlassian.com">JIRA</a> for issue tracking
-		& project management.
+		We use <a href="http://www.github.com/hybrasyl">GitHub</a> to house our
+		code and Atlassian's <a href="http://hybrasyl.atlassian.net">JIRA</a> for
+		issue tracking & project management.
 	</p>
-	
+
 	<h3>A Word on Longevity</h3>
 	<p>
 		Throughout the history of Dark Ages, a number of individuals, either
@@ -100,9 +113,9 @@
 	<ul>
 		<li><strong>Deliver on what we promise</strong> - even if it takes us
 			months or, well, year(s).</li>
-		<li><strong>Deliver Project Hybrasyl as free software</strong> - our
-			eventual intent is to license <strong>all</strong> of Project Hybrasyl's
-			components under the
+		<li><strong>Deliver Project Hybrasyl as free software</strong>
+			strong>all</strong> of Project Hybrasyl's components are licensed under
+			the
 			<a href="http://www.gnu.org/licenses/agpl.html">Affero General Public
 				License (AGPL), version 3</a>, often considered to be the "strongest"
 				of the free software licenses. The AGPL and its concern with network
@@ -120,8 +133,8 @@
 	<p>We here at Project Hybrasyl also commit publicly to releasing all of our
 		code immediately upon disbandment or abandonment of the project; as the
 		steward of all project code, Kedian in particular is committed to ensuring
-		this happens. If we do falter, the rest of the Aisling tinkerers out
-		there need not start from scratch. "Mundanes work with little progress" will not
+		this happens. If we do falter, the rest of the Aisling tinkerers out there
+		need not start from scratch. "Mundanes work with little progress" will not
 		be an entry on our timeline!
 	</p>
 

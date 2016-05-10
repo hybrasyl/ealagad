@@ -11,7 +11,7 @@ gem 'postmark-rails'
 gem 'cancan'
 gem 'acts-as-taggable-on'
 gem 'active_admin_editor'
-
+gem 'devise', "2.2.7"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.22.2'
 gem 'sqlite3'
 gem 'activeadmin', '0.5.1'
 gem 'bitfields'
@@ -11,7 +11,7 @@ gem 'postmark-rails', '0.4.1'
 gem 'cancan'
 gem 'acts-as-taggable-on'
 gem 'active_admin_editor'
-
+gem "net-ssh"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -37,7 +37,7 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'capistrano'
+gem 'capistrano', "2.15.5"
 
 # To use debugger
 # gem 'debugger'

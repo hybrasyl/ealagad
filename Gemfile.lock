@@ -193,12 +193,11 @@ DEPENDENCIES
   anjlab-bootstrap-rails (>= 2.3)
   bitfields
   cancan
-  capistrano (= 2.15.5)
+  capistrano
   coffee-rails (~> 3.2.1)
   coffee-script-source (~> 1.4.0)
   jquery-rails
   mysql2
-  net-ssh
   postmark
   postmark-rails
   rails (= 3.2.22.2)

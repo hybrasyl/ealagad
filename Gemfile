@@ -11,7 +11,7 @@ gem 'postmark-rails'
 gem 'cancan'
 gem 'acts-as-taggable-on'
 gem 'active_admin_editor'
-gem "net-ssh"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -37,7 +37,7 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'capistrano', "2.15.5"
+gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'

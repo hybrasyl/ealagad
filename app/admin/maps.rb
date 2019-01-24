@@ -21,6 +21,9 @@
 #
 
 ActiveAdmin.register Map do
+  permit_params :id, :flags, :id, :name, :size_x, :size_y, :music,
+                :warps_attributes, :worldwarps_attributes,
+                :tag_list, :tag_tokens
 
   menu :if => proc{ can?(:manage, Map) }
 

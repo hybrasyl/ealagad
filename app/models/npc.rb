@@ -21,8 +21,6 @@
 #
 
 class Npc < ActiveRecord::Base
-  # attr_accessible :id, :name, :sprite, :map_id, :map_x, :map_y, :direction,
-  # :display_text, :jobs, :portrait
   belongs_to :map
   has_and_belongs_to_many :items
 end

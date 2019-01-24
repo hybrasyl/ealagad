@@ -156,15 +156,5 @@ class Item < ActiveRecord::Base
     end
   end
 
-  # attr_accessible :id, :name, :sprite, :equip_sprite, :display_sprite,
-  # :item_type, :weapon_type, :equip_slot, :weight, :max_stack, :max_durability,
-  # :level, :ab, :class_type, :sex, :hp, :mp, :str, :int, :wis, :con, :dex, :hit,
-  # :ac, :dmg, :mr, :element, :max_s_dmg, :min_s_dmg, :max_l_dmg, :min_l_dmg,
-  # :regen, :value, :color, :enchantable, :depositable, :bound, :bodystyle,
-  # :tailorable, :smithable, :consecratable, :perishable, :exchangeable, :vendorable,
-  # :has_consecratable_variants, :has_tailorable_variants,
-  # :has_smithable_variants, :has_enchantable_variants, :has_elemental_variants,
-  # :unique_equipped, :unique, :consumed_on_use, :teleport_destination, :master_only
-
 end
 

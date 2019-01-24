@@ -29,10 +29,6 @@ class Mob < ActiveRecord::Base
     end
   end
 
-  # attr_accessible :id, :name, :sprite, :level, :min_dmg, :max_dmg, :mr, :ac,
-  # :force_multiplier, :off_element, :def_element, :exp, :gold, :drops_attributes,
-  #   :description
-
   validates :off_element, :numericality => { :only_integer => true,
     :greater_than_or_equal_to => 0,
     :less_than_or_equal_to => Hybrasyl::Constants::Elements::HASH.count }

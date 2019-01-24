@@ -21,6 +21,8 @@
 #
 
 ActiveAdmin.register Reactor do
+  permit_params :id, :name, :map_id, :map_x, :map_y, :script_name, :blocking
+
   menu :if => proc{ can?(:manage, Reactor) }
   #config.sort_order = "name_asc"
 

@@ -21,7 +21,6 @@
 #
 
 class Spawn < ActiveRecord::Base
-  # attr_accessible :quantity, :ticks
   belongs_to :mob
   belongs_to :map
 

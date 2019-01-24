@@ -26,6 +26,6 @@ class AccountPermission < ActiveRecord::Base
   validates :account_id, :presence => true
 
   # attr_accessible :account_id, :id, :superadmin, :post_news, :edit_maps, :edit_items,
-  :edit_worldmaps, :edit_boards, :enabled
+  # :edit_worldmaps, :edit_boards, :enabled
 
 end

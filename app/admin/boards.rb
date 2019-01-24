@@ -21,6 +21,8 @@
 #
 
 ActiveAdmin.register Board do
+  permit_params :id, :name
+
   menu :if => proc{ can?(:manage, Board) }
   config.sort_order = "name_asc"
 

@@ -21,6 +21,8 @@
 #
 
 ActiveAdmin.register WorldmapPoint do
+  permit_params :id, :map_x, :map_y, :max_lev, :min_ab, :min_lev, :name, :target_x, :target_y
+
   menu false
 
   member_action :set, :method => :post do

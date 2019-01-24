@@ -36,16 +36,11 @@ class Map < ActiveRecord::Base
   validates :music, :allow_blank => true, :numericality => { :greater_than_or_equal_to => -1, :less_than_or_equal_to => 128}
   bitfield :flags, 1 => :snow, 2 => :rain, 64 => :no_map, 128 => :winter
 
-  # attr_accessible :flags, :id, :name, :size_x, :size_y, :music
-  # attr_accessible :warps_attributes, :worldwarps_attributes
-
   accepts_nested_attributes_for :warps, :allow_destroy => true
   accepts_nested_attributes_for :worldwarps, :allow_destroy => true
 
   acts_as_ordered_taggable
   acts_as_ordered_taggable_on :tags
-
-  # attr_accessible :tag_list, :tag_tokens
 
   def tag_tokens=(ids)
   end

@@ -38,6 +38,6 @@ class Worldwarp < ActiveRecord::Base
   :allow_blank => true
 
   # attr_accessible :id, :max_lev, :min_ab, :min_lev,
-  :source_x, :source_y, :target_worldmap_id
+  # :source_x, :source_y, :target_worldmap_id
 
 end

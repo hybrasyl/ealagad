@@ -20,6 +20,10 @@
 #
 
 ActiveAdmin.register Account do
+  permit_params :id, :email, :password, :password_confirmation, :remember_me,
+                :roles, :roles_mask,
+                :nickname
+
   menu :if => proc{ can?(:manage, Account) }
 
   controller do

@@ -21,6 +21,8 @@
 #
 
 ActiveAdmin.register Npc do
+  permit_params :id, :name, :sprite, :map_id, :map_x, :map_y, :direction, :display_text, :jobs, :portrait
+
   menu :if => proc{ can?(:manage, Npc) }
   config.sort_order = "name_asc"
 

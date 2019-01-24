@@ -21,7 +21,6 @@
 #
 
 class DropSet < ActiveRecord::Base
-  # attr_accessible :name, :enabled, :drops_attributes
   has_and_belongs_to_many :drops
   accepts_nested_attributes_for :drops
 end

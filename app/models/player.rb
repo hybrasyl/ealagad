@@ -42,11 +42,6 @@ class Player < ActiveRecord::Base
   validates :sex, :presence => true,
   :numericality => { :greater_than => 0, :less_than_or_equal_to => 2 }
 
-  # attr_accessible :account_id, :password, :ab, :ab_exp, :class_type, :con, :cur_hp, :cur_mp, :dex,
-  # :direction, :exp, :haircolor, :hairstyle, :id, :int, :level, :map_x, :map_y,
-  # :max_hp, :max_mp, :name, :sex, :str, :wis, :attributes, :inventory, :equipment,
-  # :flag_ids, :map_id
-
   def password
     @password ||= Password.new(password_hash)
   end

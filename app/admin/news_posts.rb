@@ -21,6 +21,8 @@
 #
 
 ActiveAdmin.register NewsPost do
+  permit_params :id, :post, :title, :post_date
+
   #menu :label => "News Posts"
   menu :if => proc{ can?(:manage, NewsPost) }, :label => "News Posts"
 

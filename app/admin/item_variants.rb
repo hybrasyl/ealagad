@@ -21,7 +21,16 @@
 #
 
 include Hybrasyl::Constants
+
 ActiveAdmin.register ItemVariant do
+  permit_params :id, :name, :modifier, :bodystyle, :weight, :max_stack,
+                :max_durability, :level, :ab, :hp, :mp, :str, :int, :wis, :con, :dex,
+                :hit, :ac, :dmg, :mr, :element, :max_s_dmg, :min_s_dmg, :max_l_dmg, :min_l_dmg,
+                :value, :color, :regen, :enchantable, :depositable, :bound, :vendorable,
+                :tailorable, :smithable, :consecratable, :perishable, :exchangeable,
+                :consecratable_variant, :tailorable_variant, :smithable_variant, :enchantable_variant,
+                :elemental_variant, :effect_script_name
+
   menu :if => proc{ can?(:manage, Item) }
   config.sort_order = "name_asc"
 

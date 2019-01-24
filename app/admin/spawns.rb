@@ -21,6 +21,8 @@
 #
 
 ActiveAdmin.register Spawn do
+  permit_params :quantity, :ticks, :map_id, :mob_id
+
   menu :if => proc{ can?(:manage, Spawn) }
   #config.sort_order = "name_asc"
 

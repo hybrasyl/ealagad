@@ -31,6 +31,6 @@ class Worldmap < ActiveRecord::Base
   validates :name, :uniqueness => true,
   :length => { :minimum => 3, :maximum => 100 }
 
-  attr_accessible :client_map, :id, :name
+  # attr_accessible :client_map, :id, :name
   
 end

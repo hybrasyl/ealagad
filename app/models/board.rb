@@ -21,6 +21,6 @@
 #
 
 class Board < ActiveRecord::Base
-  attr_accessible :id, :name
+  # attr_accessible :id, :name
   has_many :board_messages
 end

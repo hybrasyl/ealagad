@@ -96,12 +96,12 @@ class ItemVariant < ActiveRecord::Base
   :variant_field => { :min_value => Integers::MIN_SIGNED16,
     :max_value => Integers::MAX_SIGNED16 }
 
-  attr_accessible :id, :name, :modifier, :bodystyle, :weight, :max_stack,
-  :max_durability, :level, :ab, :hp, :mp, :str, :int, :wis, :con, :dex,
-  :hit, :ac, :dmg, :mr, :element, :max_s_dmg, :min_s_dmg, :max_l_dmg, :min_l_dmg,
-  :value, :color, :regen, :enchantable, :depositable, :bound, :vendorable,
-  :tailorable, :smithable, :consecratable, :perishable, :exchangeable,
-  :consecratable_variant, :tailorable_variant, :smithable_variant, :enchantable_variant,
-  :elemental_variant, :effect_script_name
+  # attr_accessible :id, :name, :modifier, :bodystyle, :weight, :max_stack,
+  # :max_durability, :level, :ab, :hp, :mp, :str, :int, :wis, :con, :dex,
+  # :hit, :ac, :dmg, :mr, :element, :max_s_dmg, :min_s_dmg, :max_l_dmg, :min_l_dmg,
+  # :value, :color, :regen, :enchantable, :depositable, :bound, :vendorable,
+  # :tailorable, :smithable, :consecratable, :perishable, :exchangeable,
+  # :consecratable_variant, :tailorable_variant, :smithable_variant, :enchantable_variant,
+  # :elemental_variant, :effect_script_name
 
 end

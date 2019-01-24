@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2014_09_01_151741) do
+ActiveRecord::Schema.define(version: 2019_01_24_044410) do
 
   create_table "accounts", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2014_09_01_151741) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "roles_mask"
+    t.datetime "authentication_token_created_at"
     t.index ["authentication_token"], name: "index_accounts_on_authentication_token", unique: true
     t.index ["confirmation_token"], name: "index_accounts_on_confirmation_token", unique: true
     t.index ["email"], name: "index_accounts_on_email", unique: true

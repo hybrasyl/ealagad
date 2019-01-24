@@ -29,6 +29,6 @@ class LegendMark < ActiveRecord::Base
     true
   end
 
-  attr_accessible :id, :player, :prefix, :color, :icon, :text, :public
+  # attr_accessible :id, :player, :prefix, :color, :icon, :text, :public
 
 end

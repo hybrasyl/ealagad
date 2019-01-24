@@ -22,6 +22,6 @@
 
 class BoardMessage < ActiveRecord::Base
   belongs_to :sender, :class_name => "Player"
-  attr_accessible :id, :message, :title
+  # attr_accessible :id, :message, :title
   belongs_to :board
 end

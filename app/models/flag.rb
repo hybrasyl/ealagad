@@ -21,6 +21,6 @@
 #
 
 class Flag < ActiveRecord::Base
-  attr_accessible :description, :id, :name
+  # attr_accessible :description, :id, :name
   has_and_belongs_to_many :players
 end

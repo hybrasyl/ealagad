@@ -21,7 +21,7 @@
 #
 
 class SpawnPoint < ActiveRecord::Base
-  attr_accessible :id, :map_id, :x, :y
+  # attr_accessible :id, :map_id, :x, :y
   belongs_to :nation
   belongs_to :map
 end

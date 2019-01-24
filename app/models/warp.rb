@@ -38,7 +38,7 @@ class Warp < ActiveRecord::Base
 
   validate :max_lev_is_greater_than_min_lev
 
-  attr_accessible :target_x, :target_y, :target_id, :id, :max_lev,
+  # attr_accessible :target_x, :target_y, :target_id, :id, :max_lev,
   :min_ab, :min_lev, :mob_use, :source_id, :source_x, :source_y
 
   attr_accessor :range

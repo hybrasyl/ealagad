@@ -21,6 +21,10 @@
 #
 
 class Account < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, 
+         :recoverable, :rememberable, :validatable
 
   # By default, superadmins can edit everything (including other admins)
   # admins can edit everything except other admins
@@ -38,19 +42,19 @@ class Account < ActiveRecord::Base
 
   # Devise settings / etc
 
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, 
   :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable,
   :confirmable, :lockable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :roles, :roles_mask
+  # attr_accessible :email, :password, :password_confirmation, :remember_me
+  # attr_accessible :roles, :roles_mask
 
   has_many :players
   has_many :news_posts
 
   # Hybrasyl stuff
 
-  attr_accessible :id, :nickname
+  # attr_accessible :id, :nickname
   validates :nickname, :presence => true
 
   def password_required?

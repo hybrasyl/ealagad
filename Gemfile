@@ -24,3 +24,7 @@ group :assets do
   gem 'coffee-script-source'
   gem 'uglifier'
 end
+
+group :development do
+  gem 'letter_opener'
+end

@@ -24,6 +24,6 @@ class NewsPost < ActiveRecord::Base
   belongs_to :account
   validates :post, :post_date, :presence => true
 
-  attr_accessible :id, :post, :title, :post_date
+  # attr_accessible :id, :post, :title, :post_date
 
 end

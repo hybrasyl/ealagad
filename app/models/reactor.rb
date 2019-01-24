@@ -21,6 +21,6 @@
 #
 
 class Reactor < ActiveRecord::Base
-  attr_accessible :id, :name, :map_id, :map_x, :map_y, :script_name, :blocking
+  # attr_accessible :id, :name, :map_id, :map_x, :map_y, :script_name, :blocking
   belongs_to :map
 end

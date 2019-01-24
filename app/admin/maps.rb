@@ -32,7 +32,7 @@ ActiveAdmin.register Map do
     column "Height", :size_y
     column "Map Name", :name
     column "Tags", :tag_list, :sortable => false
-    default_actions
+    actions
   end
   filter :name
 

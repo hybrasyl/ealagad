@@ -71,7 +71,7 @@ ActiveAdmin.register Item do
     Hybrasyl::Constants::Genders::HASH, :label => "Gender"
 
   index :download_links => false do
-    default_actions
+    actions
     column :name
     column "Inventory Sprite", :sprite
     column "Equipped Sprite", :equip_sprite

@@ -34,7 +34,7 @@ ActiveAdmin.register Spawn do
     column "Mob", :mob
     column "Quantity", :quantity
     column "Ticks", :ticks
-    default_actions
+    actions
   end
 
   form do |f|

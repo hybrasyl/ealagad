@@ -31,7 +31,7 @@ ActiveAdmin.register ItemVariant do
   filter :effect_script_name
 
   index :download_links => false do
-    default_actions
+    actions
     column :name
     column :effect_script_name
   end

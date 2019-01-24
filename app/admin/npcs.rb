@@ -29,7 +29,7 @@ ActiveAdmin.register Npc do
     column "Map", :map
     column "Sprite", :sprite
     column "Portrait", :portrait
-    default_actions
+    actions
   end
 
 end

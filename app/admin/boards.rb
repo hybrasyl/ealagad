@@ -29,7 +29,7 @@ ActiveAdmin.register Board do
     column "Message Count" do |board|
       board.messages.count
     end
-    default_actions
+    actions
   end
 
 end

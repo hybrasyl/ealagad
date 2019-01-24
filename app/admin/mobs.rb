@@ -104,7 +104,7 @@ ActiveAdmin.register Mob do
     column "Experience", :exp
     column "Gold", :gold
 
-    default_actions
+    actions
   end
 
 end

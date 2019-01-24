@@ -39,7 +39,7 @@ ActiveAdmin.register Player do
       Hybrasyl::Constants::Classes::REVERSEHASH[player.class_type]
     end
     column :level, :sortable => :level 
-    default_actions
+    actions
   end
 
 end

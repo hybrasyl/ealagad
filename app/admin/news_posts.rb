@@ -35,7 +35,7 @@ ActiveAdmin.register NewsPost do
     end
     column :title
     column "Author", :account
-    default_actions
+    actions
   end
 
   form :html => { :enctype => "multipart/form-data" } do |f|

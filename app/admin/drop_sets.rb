@@ -29,7 +29,7 @@ ActiveAdmin.register DropSet do
     column "Drops" do |dropset|
       dropset.drops.map { |d| d.item.name }.join(', ')
     end
-    default_actions
+    actions
   end
 
   form do |f|

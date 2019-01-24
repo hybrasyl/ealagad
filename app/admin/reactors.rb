@@ -36,7 +36,7 @@ ActiveAdmin.register Reactor do
       "#{reactor.map_x}, #{reactor.map_y}"
     end
     column "Blocking", :blocking
-    default_actions
+    actions
   end
 
   form do |f|

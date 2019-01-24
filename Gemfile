@@ -17,6 +17,7 @@ gem 'jquery-rails'
 gem 'capistrano'
 gem 'dotenv-rails'
 gem 'listen'
+gem 'bcrypt'
 
 group :assets do
   gem 'sass-rails'

@@ -253,6 +253,7 @@ DEPENDENCIES
   activeadmin
   acts-as-taggable-on
   anjlab-bootstrap-rails
+  bcrypt
   bitfields
   cancan
   capistrano

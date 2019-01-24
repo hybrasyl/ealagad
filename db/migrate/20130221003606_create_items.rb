@@ -20,11 +20,10 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateItems < ActiveRecord::Migration
+class CreateItems < ActiveRecord::Migration[4.2]
   def change
     create_table :items do |t|
 
-      t.integer :id
       t.string  :name, :null => false
       t.integer :sprite, :null => false
       t.integer :equip_sprite, :null => false, :default => -1

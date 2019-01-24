@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddNationToSpawnPoint < ActiveRecord::Migration
+class AddNationToSpawnPoint < ActiveRecord::Migration[4.2]
   def change
     add_column :spawn_points, :nation_id, :integer, :null => false
   end

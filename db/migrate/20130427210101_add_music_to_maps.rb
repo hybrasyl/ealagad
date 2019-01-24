@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddMusicToMaps < ActiveRecord::Migration
+class AddMusicToMaps < ActiveRecord::Migration[4.2]
   def change
     add_column :maps, :music, :integer
   end

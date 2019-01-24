@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddMasterOnlyToItem < ActiveRecord::Migration
+class AddMasterOnlyToItem < ActiveRecord::Migration[4.2]
   def change
     add_column :items, :master_only, :boolean, :null => false, :default => false
   end

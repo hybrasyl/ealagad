@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddUniqueConsumedTeleportFlagToItem < ActiveRecord::Migration
+class AddUniqueConsumedTeleportFlagToItem < ActiveRecord::Migration[4.2]
   def change
     add_column :items, :unique_equipped, :boolean, :null => false, :default => false
     add_column :items, :unique, :boolean, :null => false, :default => false

@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddMetadataToReactor < ActiveRecord::Migration
+class AddMetadataToReactor < ActiveRecord::Migration[4.2]
   def change
     add_column :reactors, :script_name, :string
     add_column :reactors, :blocking, :bool, :null => false, :default => false

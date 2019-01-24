@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateWorldmapPoints < ActiveRecord::Migration
+class CreateWorldmapPoints < ActiveRecord::Migration[4.2]
   def change
     create_table :worldmap_points do |t|
-      t.integer :id
       t.string :name, :null => false
       t.belongs_to :worldmap, :null => false
       t.integer :map_x, :null => false

@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddScriptNameToItem < ActiveRecord::Migration
+class AddScriptNameToItem < ActiveRecord::Migration[4.2]
   def change
     add_column :items, :script_name, :string
   end

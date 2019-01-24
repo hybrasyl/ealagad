@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddDescriptionAndScriptNameToMobs < ActiveRecord::Migration
+class AddDescriptionAndScriptNameToMobs < ActiveRecord::Migration[4.2]
   def change
     add_column :mobs, :description, :string
     add_column :mobs, :script_name, :string

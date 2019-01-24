@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateNpcs < ActiveRecord::Migration
+class CreateNpcs < ActiveRecord::Migration[4.2]
   def change
     create_table :npcs do |t|
-      t.integer :id
       t.string :name, :null => false
       t.integer :sprite, :null => false
 

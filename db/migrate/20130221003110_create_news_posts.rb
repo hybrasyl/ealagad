@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateNewsPosts < ActiveRecord::Migration
+class CreateNewsPosts < ActiveRecord::Migration[4.2]
   def change
     create_table :news_posts do |t|
-      t.integer :id
       t.references :account, :null => false
       t.string :title, :null => false
       t.text :post, :null => false

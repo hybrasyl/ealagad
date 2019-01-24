@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class MoveAdminNotesToComments < ActiveRecord::Migration
+class MoveAdminNotesToComments < ActiveRecord::Migration[4.2]
   def self.up
     remove_index  :admin_notes, [:account_type, :account_id]
     rename_table  :admin_notes, :active_admin_comments
@@ -32,7 +32,7 @@ class MoveAdminNotesToComments < ActiveRecord::Migration
 
     # Update all the existing comments to the default namespace
     say "Updating any existing comments to the #{ActiveAdmin.application.default_namespace} namespace."
-    comments_table_name = ActiveRecord::Migrator.proper_table_name("active_admin_comments")
+    comments_table_name = proper_table_name("active_admin_comments")
     execute "UPDATE #{comments_table_name} SET namespace='#{ActiveAdmin.application.default_namespace}'"
   end
 

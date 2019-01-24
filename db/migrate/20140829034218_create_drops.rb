@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateDrops < ActiveRecord::Migration
+class CreateDrops < ActiveRecord::Migration[4.2]
   def up
     create_table :drops do |t|
       t.decimal :chance, :null => false, :default => 1.0, :precision => 10, :scale => 8

@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateBoardMessages < ActiveRecord::Migration
+class CreateBoardMessages < ActiveRecord::Migration[4.2]
   def change
     create_table :board_messages do |t|
-      t.integer :id
       t.string :title, :null => false
       t.text :message, :null => false
       t.references :sender, :null => false

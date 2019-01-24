@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddShopTabAndShopDescriptionToItem < ActiveRecord::Migration
+class AddShopTabAndShopDescriptionToItem < ActiveRecord::Migration[4.2]
   def change
     add_column :items, :shoptab, :string, :limit => 8
     add_column :items, :shopdesc, :string, :limit => 254

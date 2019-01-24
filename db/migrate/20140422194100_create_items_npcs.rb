@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateItemsNpcs < ActiveRecord::Migration
+class CreateItemsNpcs < ActiveRecord::Migration[4.2]
   def change
     create_table :items_npcs do |t|
       t.references :item, :null => false

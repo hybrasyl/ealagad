@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddDirectionToNpc < ActiveRecord::Migration
+class AddDirectionToNpc < ActiveRecord::Migration[4.2]
   def change
     add_column :npcs, :direction, :integer, :null => false, :default => 0
   end

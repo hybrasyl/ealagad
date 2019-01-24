@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddItemVariantsItemsJoinTable < ActiveRecord::Migration
+class AddItemVariantsItemsJoinTable < ActiveRecord::Migration[4.2]
   def up
     create_table :item_variants_items, :id => false do |t|
       t.integer :item_id, :null => false

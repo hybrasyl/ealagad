@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddPostDateToNewsPosts < ActiveRecord::Migration
+class AddPostDateToNewsPosts < ActiveRecord::Migration[4.2]
   def change
     add_column :news_posts, :post_date, :datetime
   end

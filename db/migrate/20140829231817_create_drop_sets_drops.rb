@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateDropSetsDrops < ActiveRecord::Migration
+class CreateDropSetsDrops < ActiveRecord::Migration[4.2]
   def up
     create_table :drop_sets_drops, :id => false do |t|
       t.integer :drop_id

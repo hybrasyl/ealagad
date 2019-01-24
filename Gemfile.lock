@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/ejholmes/active_admin_editor.git
+  revision: 86f964be3071cd938c3cd17ad00df94ece3a50c0
+  specs:
+    active_admin_editor (1.1.0)
+      activeadmin (>= 0.4.0)
+      ejs
+      rails (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -24,10 +33,6 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active_admin_editor (1.1.0)
-      activeadmin (>= 0.4.0)
-      ejs
-      rails (>= 3.0.0)
     activeadmin (1.4.3)
       arbre (>= 1.1.1)
       coffee-rails
@@ -249,7 +254,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_admin_editor
+  active_admin_editor!
   activeadmin
   acts-as-taggable-on
   anjlab-bootstrap-rails

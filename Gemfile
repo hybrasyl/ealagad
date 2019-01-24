@@ -12,9 +12,11 @@ gem 'cancan'
 gem 'acts-as-taggable-on'
 gem 'active_admin_editor'
 gem 'devise'
+gem 'devise-token_authenticatable'
 gem 'jquery-rails'
 gem 'capistrano'
 gem 'dotenv-rails'
+gem 'listen'
 
 group :assets do
   gem 'sass-rails'

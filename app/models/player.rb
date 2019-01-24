@@ -43,7 +43,7 @@ class Player < ActiveRecord::Base
   :numericality => { :greater_than => 0, :less_than_or_equal_to => 2 }
 
   def password
-    @password ||= Password.new(password_hash)
+    @password ||= Password.new(password_hash) if password_hash.present?
   end
 
   def password=(new_password)

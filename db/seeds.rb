@@ -7,10 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 if Rails.env.development?
-  Account.delete_all
-  Account.create!(email: 'admin@example.com',
-                  password: 'password',
-                  password_confirmation: 'password',
-                  nickname: 'Admin',
-                  roles: ['superadmin', 'user'])
+  # Account.delete_all
+  Account.find_or_initialize_by(email: 'admin@example.com') do |a|
+    a.nickname = 'Admin'
+    a.password = 'password'
+    a.password_confirmation = 'password'
+    a.roles = %w(superadmin user)
+    a.save!
+  end
+
+  flag = Flag.find_or_create_by(name: 'Test Flag', description: 'Test Description')
+  Nation.find_or_create_by(flag: flag.id, name: 'Test Nation', description: 'Test Description')
 end

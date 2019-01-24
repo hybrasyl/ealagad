@@ -3,9 +3,14 @@
   <div style="width: 75%">
   <%= p.inputs "Account & Login Details" do %>
     <%= p.input :account %>
+    <%= p.input :name %>
+    <%= p.input :nation %>
+    <%= p.input :sex %>
+    <%= p.input :hairstyle %>
+    <%= p.input :haircolor %>
     <%= p.input :password %>
-    <li class="optional stringish"><label class="label">Last Login</label><%= @player.last_login %>
-    <li class="optional stringish"><label class="label">Created</label><%= @player.created_at %>
+    <li class="optional stringish"><label class="label">Last Login</label><%= @player.last_login %></li>
+    <li class="optional stringish"><label class="label">Created</label><%= @player.created_at %></li>
   <% end %>
   <%= p.inputs "Location" do %>
     <%= p.input :map %> 
@@ -24,9 +29,10 @@
     <%= p.input :ab, :wrapper_html => { :class => 'float' }, :input_html => { :style => 'width: 35%' } %>
     <%= p.input :exp, :wrapper_html => { :class => 'float' }, :input_html => { :style => 'width: 35%' } %>
   <% end %>
-  
+
   <%= p.inputs "Player Flags" do %>
     <%= p.input :flags, :as => :check_boxes %>
   <% end %>
 <%= p.actions %>
+    </div>
 <% end %>

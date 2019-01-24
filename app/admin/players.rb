@@ -24,7 +24,7 @@ ActiveAdmin.register Player do
   permit_params :id, :account_id, :password, :ab, :ab_exp, :class_type, :con, :cur_hp, :cur_mp, :dex,
                 :direction, :exp, :haircolor, :hairstyle, :int, :level, :map_x, :map_y,
                 :max_hp, :max_mp, :name, :sex, :str, :wis, :attributes, :inventory, :equipment,
-                :flag_ids, :map_id
+                :flag_ids, :map_id, :nation_id
 
   menu :if => proc{ can?(:manage, Player) }
 

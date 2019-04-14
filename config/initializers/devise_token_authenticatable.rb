@@ -15,4 +15,5 @@ Devise::TokenAuthenticatable.setup do |config|
   # enables the setting of the authentication token - if not already - before the model is saved,
   # defaults to false
   config.should_ensure_authentication_token = true
+
 end

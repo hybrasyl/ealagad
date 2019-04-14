@@ -1,5 +1,11 @@
-load 'deploy'
-load 'deploy/assets'
-load 'config/deploy'
-require 'bundler/capistrano'
-require 'capistrano/ext/multistage'
+require 'capistrano/setup'
+require 'capistrano/deploy'
+require 'capistrano/rails'
+require 'capistrano/bundler'
+require 'capistrano/puma'
+require 'capistrano/puma/workers'
+require 'capistrano/puma/nginx'
+require 'capistrano/scm/git'
+
+install_plugin Capistrano::SCM::Git
+install_plugin Capistrano::Puma

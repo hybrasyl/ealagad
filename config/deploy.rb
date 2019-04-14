@@ -1,33 +1,23 @@
+lock '3.11.0'
+
 set :application, "hybrasyl"
-set :repository,  "git@github.com:baughj/ealagad.git"
+set :repo_url,  "git@github.com:hybrasyl/ealagad.git"
+
+# Default branch is :master
+ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+set :bundle_flags, '--deployment --binstubs --quiet'
 
 set :user, "hybrasyl"
 set :ssh_options, { :forward_agent => true }
-set :deploy_to, "/web/hybrasyl.com"
+set :deploy_to, "/web/hybrasyl"
+set :format, :pretty
+set :log_level, :debug
+set :pty, true
 
-set :scm, :git
+# Always use a bundled rake
+SSHKit.config.command_map[:rake] = "bundle exec rake"
+
 set :branch, "master"
-set :deploy_subdir, "hybrasyl-rails"
+set :keep_releases, 5
 
 set(:current_revision) { capture("cd #{shared_dir}/cached-copy; git rev-parse --short HEAD").strip }
-
-namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "touch #{File.join(current_path,'tmp','restart.txt')}"
-  end
-
-  task :commit do
-    run "cd #{release_path}; git rev-parse --short HEAD > #{release_path}/public/hybrasyl-commit"
-  end
-
-  task :copyconfig do
-    run "cp -R #{deploy_to}/private/* #{release_path}"
-  end
-
-end
-
-after "deploy", "deploy:migrate"
-after "deploy", "deploy:commit"
-before "deploy:assets:precompile", "deploy:copyconfig"

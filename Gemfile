@@ -14,17 +14,19 @@ gem 'active_admin_editor', git: 'https://github.com/ejholmes/active_admin_editor
 gem 'devise'
 gem 'devise-token_authenticatable'
 gem 'jquery-rails'
-gem 'capistrano'
 gem 'dotenv-rails'
 gem 'listen'
 gem 'bcrypt'
+gem 'puma'
 
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'coffee-script-source'
-  gem 'uglifier'
-end
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+gem 'capistrano'
+gem 'capistrano3-puma'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'coffee-script-source'
+gem 'uglifier'
 
 group :development do
   gem 'letter_opener'

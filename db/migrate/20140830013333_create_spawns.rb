@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateSpawns < ActiveRecord::Migration
+class CreateSpawns < ActiveRecord::Migration[4.2]
   def up
     create_table :spawns do |t|
-      t.integer :id, :null => false
       t.references :mob, :null => false
       t.references :map, :null => false
       t.integer :quantity, :null => false, :default => 0

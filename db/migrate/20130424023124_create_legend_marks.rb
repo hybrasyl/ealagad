@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateLegendMarks < ActiveRecord::Migration
+class CreateLegendMarks < ActiveRecord::Migration[4.2]
   def change
     create_table :legend_marks do |t|
-      t.integer :id, :null => false
       t.references :player, :null => false
       t.string :prefix, :null => false
       t.integer :color, :null => false, :default => 16

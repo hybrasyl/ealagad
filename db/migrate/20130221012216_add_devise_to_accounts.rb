@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddDeviseToAccounts < ActiveRecord::Migration
+class AddDeviseToAccounts < ActiveRecord::Migration[4.2]
   def self.up
     change_table(:accounts) do |t|
       ## Database authenticatable

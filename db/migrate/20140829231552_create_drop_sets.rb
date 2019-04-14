@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateDropSets < ActiveRecord::Migration
+class CreateDropSets < ActiveRecord::Migration[4.2]
   def up
     create_table :drop_sets do |t|
-      t.integer :id, :null => false
       t.string :name, :unique => true, :null => false
       t.boolean :enabled, :null => false, :default => true
       t.timestamps

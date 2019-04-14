@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateItemVariants < ActiveRecord::Migration
+class CreateItemVariants < ActiveRecord::Migration[4.2]
   def change
     create_table :item_variants do |t|
-      t.integer :id
       t.string :name, :null => false
       t.string :modifier, :null => false
       t.string :effect_script_name

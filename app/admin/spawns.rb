@@ -20,17 +20,33 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-ActiveAdmin.register Board do
-  menu :if => proc{ can?(:manage, Board) }
-  config.sort_order = "name_asc"
+ActiveAdmin.register Spawn do
+  permit_params :quantity, :ticks, :map_id, :mob_id
+
+  menu :if => proc{ can?(:manage, Spawn) }
+  #config.sort_order = "name_asc"
+
+  filter :map, :collection => Map.order('maps.name ASC').all
+  filter :mob, :collection => Mob.order('mobs.name ASC').all
+  filter :quantity
+  filter :ticks
 
   index :download_links => false do
-    column "Name", :name
-    column "Message Count" do |board|
-      board.messages.count
-    end
-    default_actions
+    column "Map", :map
+    column "Mob", :mob
+    column "Quantity", :quantity
+    column "Ticks", :ticks
+    actions
   end
 
+  form do |f|
+    f.inputs "Spawn" do
+      f.input :map, :collection => Map.order('maps.name ASC').all, :include_blank => false
+      f.input :mob, :collection => Mob.order('mobs.name ASC').all, :include_blank => false
+      f.input :quantity
+      f.input :ticks
+    end
+    f.actions
+  end
 end
 

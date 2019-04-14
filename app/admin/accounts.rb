@@ -20,6 +20,10 @@
 #
 
 ActiveAdmin.register Account do
+  permit_params :id, :email, :password, :password_confirmation, :remember_me,
+                :roles, :roles_mask,
+                :nickname
+
   menu :if => proc{ can?(:manage, Account) }
 
   controller do
@@ -37,7 +41,8 @@ ActiveAdmin.register Account do
     column :current_sign_in_at
     column :last_sign_in_at
     column :sign_in_count
-  default_actions end
+    actions
+  end
 
   filter :email
 

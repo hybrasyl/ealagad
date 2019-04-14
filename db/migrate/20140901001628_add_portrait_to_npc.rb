@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddPortraitToNpc < ActiveRecord::Migration
+class AddPortraitToNpc < ActiveRecord::Migration[4.2]
   def change
     add_column :npcs, :portrait, :string
   end

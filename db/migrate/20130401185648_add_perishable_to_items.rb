@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddPerishableToItems < ActiveRecord::Migration
+class AddPerishableToItems < ActiveRecord::Migration[4.2]
   def change
     add_column :items, :perishable, :boolean, :default => false
   end

@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateFlags < ActiveRecord::Migration
+class CreateFlags < ActiveRecord::Migration[4.2]
   def change
     create_table :flags do |t|
-      t.integer :id
       t.string :name, :null => false
       t.string :description, :null => false
 

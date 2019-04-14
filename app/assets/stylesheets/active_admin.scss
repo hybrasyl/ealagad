@@ -30,6 +30,10 @@ body.active_admin form.formtastic fieldset.choices ol.choices-group li.choice {
   margin-right: 2em;
 }
 
+.navbar-header:before, .navbar-header:after {
+  display: none !important;
+}
+
 @import "hybrasyl/token-input";
 @import "hybrasyl/token-input-facebook";
 @import "hybrasyl/worldmapeditor";

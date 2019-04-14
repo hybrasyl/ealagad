@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddMapInfoToReactor < ActiveRecord::Migration
+class AddMapInfoToReactor < ActiveRecord::Migration[4.2]
   def change
     add_column :reactors, :map_id, :integer, :null => false
     add_column :reactors, :map_x, :integer, :null => false

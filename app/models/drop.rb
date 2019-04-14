@@ -21,7 +21,7 @@
 #
 
 class Drop < ActiveRecord::Base
-  attr_accessible :chance, :min_quantity, :max_quantity, :item_id, :item_variant_ids
+  # attr_accessible :chance, :min_quantity, :max_quantity, :item_id, :item_variant_ids
   belongs_to :item
   has_and_belongs_to_many :item_variants
   has_and_belongs_to_many :drop_sets

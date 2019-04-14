@@ -21,5 +21,5 @@
 #
 
 class Skill < ActiveRecord::Base
-  attr_accessible :id, :name, :sprite
+  # attr_accessible :id, :name, :sprite
 end

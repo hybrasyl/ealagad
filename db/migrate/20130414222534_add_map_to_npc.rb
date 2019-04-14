@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddMapToNpc < ActiveRecord::Migration
+class AddMapToNpc < ActiveRecord::Migration[4.2]
   def change
     add_column :npcs, :map_id, :integer, :null => false
     add_column :npcs, :map_x, :integer, :null => false

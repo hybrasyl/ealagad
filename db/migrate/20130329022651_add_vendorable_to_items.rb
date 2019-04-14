@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddVendorableToItems < ActiveRecord::Migration
+class AddVendorableToItems < ActiveRecord::Migration[4.2]
   def change
     add_column :items, :vendorable, :boolean, :default => true
   end

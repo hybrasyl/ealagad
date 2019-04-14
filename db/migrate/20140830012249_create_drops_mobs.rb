@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateDropsMobs < ActiveRecord::Migration
+class CreateDropsMobs < ActiveRecord::Migration[4.2]
   def up
     create_table :drops_mobs, :id => false do |t|
       t.integer :drop_id

@@ -21,7 +21,7 @@
 #
 
 class Nation < ActiveRecord::Base
-  attr_accessible :flag, :id, :name, :description
+  # attr_accessible :flag, :id, :name, :description
 
   has_many :players
   has_many :spawn_points

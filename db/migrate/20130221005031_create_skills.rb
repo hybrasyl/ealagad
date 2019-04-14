@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateSkills < ActiveRecord::Migration
+class CreateSkills < ActiveRecord::Migration[4.2]
   def change
     create_table :skills do |t|
-      t.integer :id
       t.string :name, :null => false
       t.integer :sprite, :null => false
 

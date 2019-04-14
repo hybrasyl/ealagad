@@ -21,6 +21,10 @@
 #
 
 ActiveAdmin.register Mob do
+  permit_params :id, :name, :sprite, :level, :min_dmg, :max_dmg, :mr, :ac,
+                :force_multiplier, :off_element, :def_element, :exp, :gold, :drops_attributes,
+                :description
+
   menu :if => proc{ can?(:manage, Mob) }
   #config.sort_order = "name_asc"
 
@@ -104,7 +108,7 @@ ActiveAdmin.register Mob do
     column "Experience", :exp
     column "Gold", :gold
 
-    default_actions
+    actions
   end
 
 end

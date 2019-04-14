@@ -22,7 +22,7 @@
 
 class MenuOption < ActiveRecord::Base
 
-  attr_accessible :id, :name, :script_name, :dialog_id
+  # attr_accessible :id, :name, :script_name, :dialog_id
   has_one :dialog
   has_and_belongs_to_many :dialogs
 

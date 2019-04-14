@@ -23,7 +23,4 @@
 class WorldmapPoint < ActiveRecord::Base
   belongs_to :worldmap
   belongs_to :target_map, :class_name => "Map"
-  
-  attr_accessible :id, :map_x, :map_y, :max_lev, :min_ab, :min_lev, 
-  :name, :target_x, :target_y
 end

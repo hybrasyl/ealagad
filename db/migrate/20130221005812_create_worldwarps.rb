@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateWorldwarps < ActiveRecord::Migration
+class CreateWorldwarps < ActiveRecord::Migration[4.2]
   def change
     create_table :worldwarps do |t|
-      t.integer :id
       t.references :target_worldmap, :null => false
       t.integer :min_lev, :default => 1
       t.integer :max_lev, :default => 99

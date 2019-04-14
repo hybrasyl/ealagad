@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddDisplayTextToNpc < ActiveRecord::Migration
+class AddDisplayTextToNpc < ActiveRecord::Migration[4.2]
   def change
     add_column :npcs, :display_text, :text
   end

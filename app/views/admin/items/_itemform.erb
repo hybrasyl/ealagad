@@ -32,7 +32,7 @@
 <%= i.input :consumed_on_use, :label => "Consumed on use" %>
 <%= i.input :master_only, :label => "Master only" %><br/>
 <%= i.input :teleport_destination, :label => "Teleport destination",
-    :as => :select, :collection => Map.all(:order => 'name').map{|m| ["#{m.name}", m.id]} %>
+    :as => :select, :collection => Map.order('name ASC').map{|m| ["#{m.name}", m.id]} %>
 </div>
 
 <div style="padding: 20px 0px 0px 10px; ">

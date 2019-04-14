@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddPlayerFlags < ActiveRecord::Migration
+class AddPlayerFlags < ActiveRecord::Migration[4.2]
   def up
     create_table :flags_players, :id => false do |t|
       t.integer :player_id, :null => false

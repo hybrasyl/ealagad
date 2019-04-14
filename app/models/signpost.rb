@@ -23,5 +23,5 @@
 class Signpost < ActiveRecord::Base
   belongs_to :map
   has_one :forum
-  attr_accessible :is_blueboard, :map_x, :map_y, :message
+  # attr_accessible :is_blueboard, :map_x, :map_y, :message
 end

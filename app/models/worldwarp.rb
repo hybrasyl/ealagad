@@ -37,7 +37,7 @@ class Worldwarp < ActiveRecord::Base
     :less_than_or_equal_to => Hybrasyl::Constants::Integers::MAX_LEVEL },
   :allow_blank => true
 
-  attr_accessible :id, :max_lev, :min_ab, :min_lev,
-  :source_x, :source_y, :target_worldmap_id
+  # attr_accessible :id, :max_lev, :min_ab, :min_lev,
+  # :source_x, :source_y, :target_worldmap_id
 
 end

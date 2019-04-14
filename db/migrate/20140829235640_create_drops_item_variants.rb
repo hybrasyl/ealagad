@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateDropsItemVariants < ActiveRecord::Migration
+class CreateDropsItemVariants < ActiveRecord::Migration[4.2]
   def up
     create_table :drops_item_variants, :id => false do |t|
       t.integer :drop_id, :null => false

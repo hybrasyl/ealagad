@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddLevelPointsToPlayer < ActiveRecord::Migration
+class AddLevelPointsToPlayer < ActiveRecord::Migration[4.2]
   def change
     add_column :players, :level_points, :int, :null => false, :default => 0
   end

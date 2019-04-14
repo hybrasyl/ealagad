@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateSpawnPoints < ActiveRecord::Migration
+class CreateSpawnPoints < ActiveRecord::Migration[4.2]
   def change
     create_table :spawn_points do |t|
-      t.integer :id, :null => false
       t.references :map, :null => false
       t.integer :map_x, :null => false
       t.integer :map_y, :null => false

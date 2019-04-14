@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateWarps < ActiveRecord::Migration
+class CreateWarps < ActiveRecord::Migration[4.2]
   def change
     create_table :warps do |t|
-      t.integer :id
       t.string :source_x, :null => false
       t.string :source_y, :null => false
       t.string :target_x, :null => false

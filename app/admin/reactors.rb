@@ -20,20 +20,37 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-include Hybrasyl::Constants
-ActiveAdmin.register ItemVariant do
-  menu :if => proc{ can?(:manage, Item) }
-  config.sort_order = "name_asc"
+ActiveAdmin.register Reactor do
+  permit_params :id, :name, :map_id, :map_x, :map_y, :script_name, :blocking
 
-  form :partial => "itemvariantform"
+  menu :if => proc{ can?(:manage, Reactor) }
+  #config.sort_order = "name_asc"
 
+  filter :map, :collection => Map.order('maps.name ASC').all
   filter :name
-  filter :effect_script_name
+  filter :script_name
 
   index :download_links => false do
-    default_actions
-    column :name
-    column :effect_script_name
+    column "Reactor Name", :name
+    column "Script Name (if applicable)", :script_name
+    column "Map", :map
+    column "Coordinates" do |reactor|
+      "#{reactor.map_x}, #{reactor.map_y}"
+    end
+    column "Blocking", :blocking
+    actions
   end
 
+  form do |f|
+    f.inputs "Reactor" do
+      f.input :map, :collection => Map.order('maps.name ASC').all, :include_blank => false
+      f.input :map_x
+      f.input :map_y
+      f.input :blocking
+      f.input :name
+      f.input :script_name
+    end
+    f.actions
+  end
 end
+

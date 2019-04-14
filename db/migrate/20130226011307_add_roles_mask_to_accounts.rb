@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddRolesMaskToAccounts < ActiveRecord::Migration
+class AddRolesMaskToAccounts < ActiveRecord::Migration[4.2]
   def change
     add_column :accounts, :roles_mask, :integer
   end

@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateNations < ActiveRecord::Migration
+class CreateNations < ActiveRecord::Migration[4.2]
   def change
     create_table :nations do |t|
-      t.integer :id, :null => false
       t.integer :flag, :null => false
       t.string :name, :null => false
       t.text :description

@@ -20,35 +20,19 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-ActiveAdmin.register Reactor do
-  menu :if => proc{ can?(:manage, Reactor) }
-  #config.sort_order = "name_asc"
+ActiveAdmin.register Npc do
+  permit_params :id, :name, :sprite, :map_id, :map_x, :map_y, :direction, :display_text, :jobs, :portrait
 
-  filter :map, :collection => Map.order('maps.name ASC').all
-  filter :name
-  filter :script_name
+  menu :if => proc{ can?(:manage, Npc) }
+  config.sort_order = "name_asc"
 
   index :download_links => false do
-    column "Reactor Name", :name
-    column "Script Name (if applicable)", :script_name
+    column "Name", :name
     column "Map", :map
-    column "Coordinates" do |reactor|
-      "#{reactor.map_x}, #{reactor.map_y}"
-    end
-    column "Blocking", :blocking
-    default_actions
+    column "Sprite", :sprite
+    column "Portrait", :portrait
+    actions
   end
 
-  form do |f|
-    f.inputs "Reactor" do
-      f.input :map, :collection => Map.order('maps.name ASC').all, :include_blank => false
-      f.input :map_x
-      f.input :map_y
-      f.input :blocking
-      f.input :name
-      f.input :script_name
-    end
-    f.actions
-  end
 end
 

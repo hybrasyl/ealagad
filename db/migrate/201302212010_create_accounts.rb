@@ -20,11 +20,10 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateAccounts < ActiveRecord::Migration
+class CreateAccounts < ActiveRecord::Migration[4.2]
   def change
     create_table :accounts do |t|
       # Hybrasyl fields
-      t.integer :id
       t.string :nickname, :null => false
       t.boolean :enabled, :null => false, :default => true
     end

@@ -21,10 +21,9 @@
 #
 
 # Deprecated. Delete
-class CreateEntities < ActiveRecord::Migration
+class CreateEntities < ActiveRecord::Migration[4.2]
   def change
     create_table :entities do |t|
-      t.integer :id
       t.string :uuid
       t.string :data
       t.boolean :dirty

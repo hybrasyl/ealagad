@@ -21,6 +21,9 @@
 #
 
 ActiveAdmin.register Map do
+  permit_params :id, :flags, :id, :name, :size_x, :size_y, :music,
+                :warps_attributes, :worldwarps_attributes,
+                :tag_list, :tag_tokens
 
   menu :if => proc{ can?(:manage, Map) }
 
@@ -32,7 +35,7 @@ ActiveAdmin.register Map do
     column "Height", :size_y
     column "Map Name", :name
     column "Tags", :tag_list, :sortable => false
-    default_actions
+    actions
   end
   filter :name
 

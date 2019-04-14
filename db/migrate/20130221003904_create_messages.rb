@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateMessages < ActiveRecord::Migration
+class CreateMessages < ActiveRecord::Migration[4.2]
   def change
     create_table :messages do |t|
-      t.integer :id
       t.integer :index, :null => false, :default => 0
       t.string :title, :null => false
       t.text :message, :null => false

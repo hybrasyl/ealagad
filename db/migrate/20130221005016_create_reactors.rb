@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateReactors < ActiveRecord::Migration
+class CreateReactors < ActiveRecord::Migration[4.2]
   def change
     create_table :reactors do |t|
-      t.integer :id
       t.string :name, :null => false
 
       t.timestamps

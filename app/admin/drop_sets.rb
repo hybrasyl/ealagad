@@ -21,6 +21,8 @@
 #
 
 ActiveAdmin.register DropSet do
+  permit_params :id, :name, :enabled, :drops_attributes
+
   menu :if => proc{ can?(:manage, DropSet) }
   config.sort_order = "name_asc"
   index :download_links => false do
@@ -29,7 +31,7 @@ ActiveAdmin.register DropSet do
     column "Drops" do |dropset|
       dropset.drops.map { |d| d.item.name }.join(', ')
     end
-    default_actions
+    actions
   end
 
   form do |f|

@@ -21,12 +21,11 @@
 #
 
 class Spawn < ActiveRecord::Base
-  attr_accessible :quantity, :ticks
   belongs_to :mob
   belongs_to :map
 
-  validate :ticks, :presence => true
-  validate :quantity, :presence => true, :numericality => { :greater_than_or_equal_to => 1 }
+  validates :ticks, :presence => true
+  validates :quantity, :presence => true, :numericality => { :greater_than_or_equal_to => 1 }
 
   validate :dont_overspawn_maps_kthx
 

@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddLoginToPlayer < ActiveRecord::Migration
+class AddLoginToPlayer < ActiveRecord::Migration[4.2]
   def change
     add_column :players, :last_login, :datetime
     add_column :players, :last_logoff, :datetime

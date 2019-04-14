@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateMaps < ActiveRecord::Migration
+class CreateMaps < ActiveRecord::Migration[4.2]
   def change
     create_table :maps do |t|
-      t.integer :id, :null => false
       t.integer :size_x, :null => false
       t.integer :size_y, :null => false
       t.string :name, :null => false

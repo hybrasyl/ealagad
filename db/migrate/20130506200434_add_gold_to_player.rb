@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddGoldToPlayer < ActiveRecord::Migration
+class AddGoldToPlayer < ActiveRecord::Migration[4.2]
   def change
     add_column :players, :gold, :integer, :null => false, :default => 0
   end

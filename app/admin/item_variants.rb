@@ -20,26 +20,29 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-ActiveAdmin.register Player do
-  menu :if => proc{ can?(:manage, Player) }
+include Hybrasyl::Constants
 
+ActiveAdmin.register ItemVariant do
+  permit_params :id, :name, :modifier, :bodystyle, :weight, :max_stack,
+                :max_durability, :level, :ab, :hp, :mp, :str, :int, :wis, :con, :dex,
+                :hit, :ac, :dmg, :mr, :element, :max_s_dmg, :min_s_dmg, :max_l_dmg, :min_l_dmg,
+                :value, :color, :regen, :enchantable, :depositable, :bound, :vendorable,
+                :tailorable, :smithable, :consecratable, :perishable, :exchangeable,
+                :consecratable_variant, :tailorable_variant, :smithable_variant, :enchantable_variant,
+                :elemental_variant, :effect_script_name
+
+  menu :if => proc{ can?(:manage, Item) }
   config.sort_order = "name_asc"
 
-  filter :name
-  filter :account
-  filter :class_type, :as => :select, :collection =>
-    Hybrasyl::Constants::Classes::HASH
+  form :partial => "itemvariantform"
 
-  form :partial => 'update'
+  filter :name
+  filter :effect_script_name
 
   index :download_links => false do
+    actions
     column :name
-    column :account, :sortable => :account_id
-    column "Class", :class_type do |player|
-      Hybrasyl::Constants::Classes::REVERSEHASH[player.class_type]
-    end
-    column :level, :sortable => :level 
-    default_actions
+    column :effect_script_name
   end
 
 end

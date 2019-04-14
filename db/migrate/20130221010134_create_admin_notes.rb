@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateAdminNotes < ActiveRecord::Migration
+class CreateAdminNotes < ActiveRecord::Migration[4.2]
   def self.up
     create_table :admin_notes do |t|
       t.string :resource_id, :null => false

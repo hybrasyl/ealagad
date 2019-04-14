@@ -21,6 +21,6 @@
 #
 
 class Message < ActiveRecord::Base
-  attr_accessible :id, :index, :message, :title
+  # attr_accessible :id, :index, :message, :title
   belongs_to :board
 end

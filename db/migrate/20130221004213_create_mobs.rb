@@ -20,10 +20,9 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateMobs < ActiveRecord::Migration
+class CreateMobs < ActiveRecord::Migration[4.2]
   def change
     create_table :mobs do |t|
-      t.integer :id
       t.string :name, :null => false
       t.integer :sprite, :null => false
 

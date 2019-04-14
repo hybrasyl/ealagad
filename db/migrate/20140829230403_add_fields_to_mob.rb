@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddFieldsToMob < ActiveRecord::Migration
+class AddFieldsToMob < ActiveRecord::Migration[4.2]
   def change
     add_column :mobs, :level, :integer, :null => false, :default => 1
     add_column :mobs, :min_dmg, :integer, :null => false, :default => 1

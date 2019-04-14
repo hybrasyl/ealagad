@@ -21,6 +21,8 @@
 #
 
 ActiveAdmin.register Worldmap do
+  permit_params :id, :client_map, :name
+
   menu :if => proc{ can?(:manage, Map) }, :label => "World Maps"
 
   index :download_links => false do

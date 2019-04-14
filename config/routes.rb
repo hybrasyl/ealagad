@@ -1,22 +1,21 @@
 Hybrasyl::Application.routes.draw do
 
   root :to => 'ealagad#index'
-  match '/contact' => 'ealagad#contact'
-  match '/launcher' => 'ealagad#launcher'
-  match '/about' => 'ealagad#about'
-  match '/about/credits' => 'ealagad#credits'
-  match '/releases' => 'ealagad#releases'
-  match '/account/manager' => 'account#manager'
-  match '/account/link' => 'account#link'
-  match '/account/character/:id/reset' => 'account#reset'
+  get '/contact' => 'ealagad#contact'
+  get '/launcher' => 'ealagad#launcher'
+  get '/about' => 'ealagad#about'
+  get '/about/credits' => 'ealagad#credits'
+  get '/releases' => 'ealagad#releases'
+  get '/account/manager' => 'account#manager'
+  get '/account/link' => 'account#link'
+  get '/account/character/:id/reset' => 'account#reset'
 
-  devise_for :accounts
-  devise_for :accounts, :path => 'admin', :path_names => { :sign_in => 'sign_in' }
+  devise_for :accounts, ActiveAdmin::Devise.config.merge(path_names: { :sign_in => 'sign_in' })
 
   ActiveAdmin.routes(self)
 
   namespace :admin do
-    match '/worldmaps/:id/pointeditor' => 'worldmaps#pointeditor'
+    get '/worldmaps/:id/pointeditor' => 'worldmaps#pointeditor'
   end
 
   namespace :api do
@@ -26,6 +25,4 @@ Hybrasyl::Application.routes.draw do
       get 'status', :to => "api#status"
     end
   end
-
-
 end

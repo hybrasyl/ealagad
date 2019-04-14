@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class CreateSignposts < ActiveRecord::Migration
+class CreateSignposts < ActiveRecord::Migration[4.2]
   def change
     create_table :signposts do |t|
       t.references :map, :null => false

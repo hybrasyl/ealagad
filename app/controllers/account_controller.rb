@@ -22,7 +22,7 @@
 
 class AccountController < ApplicationController
 
-  before_filter :authenticate_account!
+  before_action :authenticate_account!
 
   def manager
     @characters = current_account.players

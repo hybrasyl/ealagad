@@ -20,7 +20,7 @@
 # Authors:   Justin Baugh    <baughj@hybrasyl.com>
 #
 
-class AddNationToPlayer < ActiveRecord::Migration
+class AddNationToPlayer < ActiveRecord::Migration[4.2]
   def up
     add_column :players, :nation_id, :integer
   end

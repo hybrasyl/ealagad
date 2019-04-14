@@ -23,3 +23,19 @@ set :branch, "master"
 set :keep_releases, 5
 
 set(:current_revision) { capture("cd #{shared_dir}/cached-copy; git rev-parse --short HEAD").strip }
+namespace :deploy do
+  namespace :puma do
+    Rake::Task['puma:restart'].clear_actions
+    Rake::Task['puma:stop'].clear_actions
+    Rake::Task['puma:start'].clear_actions
+
+    %w[stop start restart].map do |command|
+      desc "#{command} puma workers"
+      task command do
+        on roles(:app), in: :groups, limit: 2 do
+          execute :sudo, "service hybrasyl #{command}"
+        end
+      end
+    end
+  end
+end

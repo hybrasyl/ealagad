@@ -3,6 +3,8 @@ lock '3.11.0'
 set :application, "hybrasyl"
 set :repo_url,  "git@github.com:hybrasyl/ealagad.git"
 
+append :linked_files, '.env'  
+
 # Default branch is :master
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 set :bundle_flags, '--deployment --binstubs --quiet'

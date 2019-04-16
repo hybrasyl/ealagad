@@ -11,4 +11,3 @@ Rails.application.config.assets.paths << Rails.root.join('app/assets/stylesheets
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w(jquery-old.js jquery-ui-1.8.17.js jquery.annotate.js jquery.tokeninput.js news_post.js)

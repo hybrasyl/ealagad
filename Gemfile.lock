@@ -280,8 +280,6 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano3-puma
-  coffee-rails
-  coffee-script-source
   devise
   devise-token_authenticatable
   dotenv-rails

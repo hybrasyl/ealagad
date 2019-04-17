@@ -1,2 +1,9 @@
 @import "bootstrap-sprockets";
-@import "bootstrap"
+@import "bootstrap";
+
+.navbar .navbar-header .navbar-brand {
+  height: 30px;
+  padding: 0 15px;
+  font-size: 16px;
+  line-height: 15px;
+}

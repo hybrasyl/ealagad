@@ -1,5 +1,7 @@
 # Ealagad
 
+**DO NOT USE THIS**. It is deprecated and has been for several years.
+
 Ealagad is an administrative and web UI for Project Hybrasyl.
 Its primary usage is to provide an easy to use admin interface to GMs for the
 purposes of editing maps, items, etc.
